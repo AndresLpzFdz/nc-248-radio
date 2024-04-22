@@ -1,0 +1,7 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+    }
+}
+include ':app'
+rootProject.name = "NC248Radio"

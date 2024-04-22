@@ -1,0 +1,74 @@
+import java.text.SimpleDateFormat
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin' //Safe Args
+    id 'org.jetbrains.kotlin.android'
+    id 'dagger.hilt.android.plugin' //Hilt
+}
+
+android {
+    namespace 'com.nc248radio'
+
+    //Automatic release date
+    def dateFormat = new SimpleDateFormat("dd MMMM 'de' yyyy", Locale.getDefault())
+    def currentDate = dateFormat.format(new Date())
+
+    defaultConfig {
+        applicationId "com.nc248radio"
+        minSdkVersion 24
+        targetSdkVersion 34
+        compileSdk 34
+        versionCode 1
+        versionName "0.1"
+        buildConfigField "String", "RELEASE_DATE", "\"${currentDate}\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+            signingConfig signingConfigs.debug //TODO(): Cambiar por la firma de release
+        }
+
+    }
+
+    applicationVariants.configureEach { variant ->
+        //Se define el formato del nombre del apk exportado
+        variant.outputs.configureEach {
+            outputFileName = "nc248radio-v${versionCode}.apk"
+        }
+    }
+
+    buildFeatures{
+        dataBinding = true
+        viewBinding true
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_17.toString()
+    }
+
+}
+
+dependencies {
+    implementation 'androidx.core:core-ktx:1.13.0'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    //Lifecycle
+    def lifecycle_version = "2.7.0"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+    //Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    //Hilt
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
+}

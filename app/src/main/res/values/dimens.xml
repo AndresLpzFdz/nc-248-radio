@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="round_corners_button">24dp</dimen>
+    <dimen name="round_corners_text_input">16dp</dimen>
+    <dimen name="round_corners_dialog">16dp</dimen>
+
+    <dimen name="text_size_regular">14sp</dimen>
+    <dimen name="text_size_title">24sp</dimen>
+</resources>

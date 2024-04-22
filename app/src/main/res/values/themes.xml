@@ -1,0 +1,83 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">#FFF</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">#FFF</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+
+        <!-- Customize your theme here. -->
+
+        <item name="android:windowBackground">@color/colorSecondary</item> <!-- Se aplica a todos los backgrounds -->
+        <item name="android:textViewStyle">@style/AppTheme.Text</item> <!-- Se aplica a todos los TextViews-->
+        <item name="android:buttonStyle">@style/AppTheme.Button</item> <!-- Se aplica a todos los Buttons-->
+        <item name="toolbarStyle">@style/AppTheme.Toolbar</item> <!-- Se aplica a todos los Toolbars-->
+    </style>
+
+    <!-- TextView -->
+
+    <style name="AppTheme.Text" parent="@android:style/TextAppearance">
+        <item name="android:textSize">@dimen/text_size_regular</item>
+        <item name="android:textColor">@color/mainText</item>
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+    </style>
+
+    <style name="AppTheme.Text.Light">
+        <item name="android:fontFamily">@font/montserrat_light</item>
+    </style>
+
+    <style name="AppTheme.Text.Title">
+        <item name="android:textSize">@dimen/text_size_title</item>
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+    </style>
+
+    <style name="AppTheme.Text.Toolbar">
+        <item name="android:textColor">@color/toolbarText</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <!-- Button -->
+
+    <style name="AppTheme.Button" parent="@style/Widget.AppCompat.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+        <item name="android:background">@drawable/background_button</item>
+        <item name="android:paddingStart">12dp</item>
+        <item name="android:paddingEnd">12dp</item>
+        <!--
+        Eliminar sombra del botón
+        <item name="android:stateListAnimator">@null</item>
+        -->
+    </style>
+
+    <style name="AppTheme.Button.Borderless" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/mainText</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/montserrat_semi_bold</item>
+    </style>
+
+    <style name="AppTheme.Button.Borderless.Colored" parent="@style/Widget.AppCompat.Button.Borderless">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/montserrat_bold</item>
+    </style>
+
+    <!-- Toolbar -->
+
+    <style name="AppTheme.Toolbar">
+        <item name="android:background">@color/toolbarBackground</item>
+        <item name="contentInsetStart">0dp</item>
+        <item name="contentInsetEnd">0dp</item>
+        <item name="android:minHeight">?attr/actionBarSize</item>
+        <item name="android:elevation">0dp</item>
+    </style>
+
+</resources>

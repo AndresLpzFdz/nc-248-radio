@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">NC 248 Radio</string> <!-- TODO Cambiar -->
+
+    <!-- Descriptions -->
+    <string name="description_back">Volver</string>
+    <string name="description_close">Cerrar</string>
+
+    <!-- Errors-->
+    <string name="error_generic">Se ha producido un error.</string>
+    <string name="error_connection">Se ha producido un error, comprueba la conexión.</string>
+
+    <!-- Dialog-->
+    <string name="accept">Aceptar</string>
+    <string name="cancel">Cancelar</string>
+
+    <!-- Permissions --> <!-- TODO Borrar si no se usa -->
+    <string name="permissions_dialog_title">Permisos</string>
+    <string name="settings">Ajustes</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Configuración</string>
+
+</resources>
