@@ -5,21 +5,11 @@
     <color name="colorSecondary">#1A1819</color>
     <color name="colorSecondaryVariant">#1A1819</color>
 
-    <!-- ToolBar -->
-    <color name="toolbarBackground">@color/colorPrimary</color>
-    <color name="toolbarText">#1C1A1B</color>
     <!-- SnackBar -->
     <color name="snackBarMessageBackground">@color/colorPrimary</color>
-    <color name="snackBarErrorBackground">#E5455E</color>
     <!-- Progress -->
-    <color name="progressBackground">#441C1A1B</color>
+    <color name="progressBackground">#881A1819</color>
     <color name="progressColor">@color/colorPrimary</color>
-    <!-- Button -->
-    <color name="buttonBackground">@color/colorPrimary</color>
-
-    <color name="dividerColor">#ECECEC</color>
-    <color name="dividerColorDark">#AFAFAF</color>
-
     <!-- Texts Colors -->
     <color name="mainText">@android:color/white</color>
 

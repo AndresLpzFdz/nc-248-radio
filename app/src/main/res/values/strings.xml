@@ -1,23 +1,19 @@
 <resources>
-    <string name="app_name">NC 248 Radio</string> <!-- TODO Cambiar -->
+    <string name="app_name">NC 248 RADIO</string>>
 
     <!-- Descriptions -->
-    <string name="description_back">Volver</string>
     <string name="description_close">Cerrar</string>
+    <string name="description_play">Play</string>
+    <string name="description_pause">Pause</string>
+    <string name="description_info">Info</string>
 
     <!-- Errors-->
-    <string name="error_generic">Se ha producido un error.</string>
-    <string name="error_connection">Se ha producido un error, comprueba la conexión.</string>
+    <string name="error_generic">Se ha producido un error</string>
+    <string name="error_connection">Se ha producido un error, comprueba la conexión</string>
 
-    <!-- Dialog-->
-    <string name="accept">Aceptar</string>
-    <string name="cancel">Cancelar</string>
+    <!-- Player-->
+    <string name="initial">Escucha <b>NC 248 RADIO</b> en directo o sus últimos programas</string>
 
-    <!-- Permissions --> <!-- TODO Borrar si no se usa -->
-    <string name="permissions_dialog_title">Permisos</string>
-    <string name="settings">Ajustes</string>
-
-    <!-- Settings -->
-    <string name="settings_title">Configuración</string>
-
+    <!--Info-->
+    <string name="info">Somos un proyecto sin ánimo de lucro emplazado en <b>LABoral Centro de Arte y Creación Industrial</b>\n\nGracias por sintonizar <b>NC 248 RADIO</b></string>
 </resources>
