@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
+import androidx.media3.common.MediaMetadata
 import androidx.media3.common.PlaybackException
 import androidx.media3.common.Player
 import androidx.media3.datasource.HttpDataSource
@@ -84,39 +85,34 @@ class PlayerFragment: Fragment() {
     }
 
     private fun setPlayerListener() {
-        player?.addListener(
-            object : Player.Listener {
-                override fun onPlayerError(error: PlaybackException) {
-                    val message = if (error.cause is HttpDataSource.HttpDataSourceException)
-                        getString(R.string.error_connection)
-                    else
-                        getString(R.string.error_generic)
+        val listener = object : Player.Listener {
+            override fun onPlayerError(error: PlaybackException) {
+                val message = if (error.cause is HttpDataSource.HttpDataSourceException)
+                    getString(R.string.error_connection)
+                else
+                    getString(R.string.error_generic)
 
-                    showMessage(message)
-
-                    showPauseState()
-                }
+                showMessage(message)
+                showPauseState()
             }
-        )
-
-        player?.addListener(
-            object : Player.Listener {
-                override fun onIsPlayingChanged(isPlaying: Boolean) {
-                    if (isPlaying) {
-                        showPlayState()
-                    } else {
-                        player?.let {
-                            if(it.playbackState == Player.STATE_READY) {
-                                showPauseState()
-                            } else {
-                                if(it.isLoading) showWaitState()
-                            }
+            override fun onIsPlayingChanged(isPlaying: Boolean) {
+                if (isPlaying) {
+                    showPlayState()
+                } else {
+                    player?.let {
+                        if(it.playbackState == Player.STATE_READY) {
+                            showPauseState()
+                        } else {
+                            if(it.isLoading) showWaitState()
                         }
                     }
                 }
             }
-        )
-
+            override fun onMediaMetadataChanged(mediaMetadata: MediaMetadata) {
+                showInfoText(mediaMetadata)
+            }
+        }
+        player?.addListener(listener)
     }
 
     //Methods
@@ -158,8 +154,6 @@ class PlayerFragment: Fragment() {
         binding.playButton.isVisible = false
         binding.pauseButton.isVisible = true
         binding.progressLayout.isVisible = false
-
-        showInfoText()
     }
 
     private fun showPauseState() {
@@ -168,8 +162,8 @@ class PlayerFragment: Fragment() {
         binding.progressLayout.isVisible = false
     }
 
-    private fun showInfoText() {
-        player?.mediaMetadata?.title?.toString()?.let {
+    private fun showInfoText(mediaMetadata: MediaMetadata) {
+        mediaMetadata.title?.toString()?.let {
             binding.infoText.text = it
         }
     }
